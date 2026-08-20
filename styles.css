@@ -1,42 +1,21 @@
-```css
 /* =========================
-   FERN DATA MANAGEMENT
-   GLOBAL DESIGN SYSTEM
+   GLOBAL SETTINGS
    ========================= */
 
 :root {
-    --forest-black: #07110c;
-    --forest-dark: #0d1f16;
-    --forest: #173c2a;
-    --forest-mid: #24573c;
-
+    --forest-dark: #071510;
+    --forest: #123b2a;
     --fern: #3f8f55;
-    --fern-bright: #69b875;
-    --fern-soft: #a8c9ad;
+    --fern-bright: #65b96f;
+    --sage: #a8c3aa;
 
     --cream: #f5f6f2;
     --surface: #ffffff;
     --surface-alt: #edf1ec;
-    --surface-dark: #111814;
 
-    --text: #172019;
-    --text-light: #f5f7f4;
+    --text: #18201b;
     --muted: #667069;
-    --muted-light: #b6c1b8;
-
-    --border: #d6ddd7;
-
-    --shadow-small: 0 4px 14px rgba(7, 17, 12, 0.08);
-    --shadow-medium: 0 10px 30px rgba(7, 17, 12, 0.12);
-
-    --radius-small: 6px;
-    --radius-medium: 10px;
 }
-
-
-/* =========================
-   RESET / GLOBAL
-   ========================= */
 
 * {
     box-sizing: border-box;
@@ -58,16 +37,11 @@ body {
 h1,
 h2,
 h3 {
-    line-height: 1.15;
+    line-height: 1.2;
 }
 
 a {
     text-decoration: none;
-}
-
-img {
-    max-width: 100%;
-    display: block;
 }
 
 
@@ -76,66 +50,45 @@ img {
    ========================= */
 
 header {
-    min-height: 92px;
-    background-color: var(--surface);
+    min-height: 90px;
+    background-color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 7%;
-    border-bottom: 1px solid var(--border);
-    position: relative;
-    z-index: 10;
+    border-bottom: 1px solid #dddddd;
 }
 
 .logo {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 3px;
 }
 
 .logo h1 {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     color: var(--forest-dark);
-    letter-spacing: -0.5px;
 }
 
 .logo span {
-    color: var(--muted);
     font-size: 0.78rem;
+    color: var(--muted);
 }
 
 nav {
     display: flex;
-    gap: 32px;
+    gap: 30px;
 }
 
 nav a {
-    color: var(--text);
-    font-weight: 700;
-    padding: 34px 0;
-    position: relative;
-    transition: color 0.2s ease;
-}
-
-nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 25px;
-    width: 0;
-    height: 2px;
-    background-color: var(--fern);
-    transition: width 0.2s ease;
+    color: #333333;
+    font-weight: bold;
+    padding: 31px 0;
 }
 
 nav a:hover,
 nav a.active {
     color: var(--fern);
-}
-
-nav a:hover::after,
-nav a.active::after {
-    width: 100%;
 }
 
 
@@ -147,25 +100,25 @@ nav a.active::after {
     min-height: 650px;
     display: flex;
     align-items: center;
-    padding: 85px 8%;
-    color: var(--text-light);
+    padding: 80px 8%;
 
     background:
         linear-gradient(
             90deg,
-            rgba(7, 17, 12, 0.90) 0%,
-            rgba(7, 17, 12, 0.75) 38%,
-            rgba(7, 17, 12, 0.28) 70%,
-            rgba(7, 17, 12, 0.15) 100%
+            rgba(7, 21, 16, 0.90) 0%,
+            rgba(7, 21, 16, 0.74) 42%,
+            rgba(7, 21, 16, 0.30) 72%,
+            rgba(7, 21, 16, 0.12) 100%
         ),
         url("hero.jpg");
 
     background-size: cover;
     background-position: center;
+    color: white;
 }
 
 .hero-content {
-    max-width: 720px;
+    max-width: 750px;
 }
 
 .hero .eyebrow {
@@ -173,15 +126,15 @@ nav a.active::after {
 }
 
 .hero h2 {
-    font-size: clamp(3.2rem, 7vw, 6.3rem);
-    margin: 12px 0 25px;
-    letter-spacing: -2px;
+    font-size: clamp(3rem, 7vw, 6rem);
+    margin: 10px 0 25px;
+    color: white;
 }
 
 .hero p {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     max-width: 650px;
-    color: #e7ece8;
+    color: white;
 }
 
 
@@ -195,15 +148,15 @@ section {
 
 .eyebrow {
     color: var(--fern);
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     letter-spacing: 3px;
-    font-weight: 800;
-    margin-bottom: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .section-heading {
-    max-width: 720px;
-    margin-bottom: 28px;
+    max-width: 700px;
+    margin-bottom: 25px;
 }
 
 .section-heading h2,
@@ -212,13 +165,12 @@ section {
 .page-header h2,
 .about-section h2,
 .contact-container h2 {
-    font-size: clamp(2rem, 4vw, 2.8rem);
-    color: var(--forest-dark);
+    font-size: 2.5rem;
 }
 
 .section-description {
-    max-width: 820px;
-    font-size: 1.08rem;
+    max-width: 800px;
+    font-size: 1.1rem;
     color: var(--muted);
 }
 
@@ -228,42 +180,32 @@ section {
    ========================= */
 
 .hero-buttons {
-    margin-top: 38px;
+    margin-top: 35px;
     display: flex;
-    gap: 14px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
 .button {
     display: inline-block;
-    padding: 14px 26px;
-    border-radius: var(--radius-small);
-    font-weight: 700;
-    transition:
-        transform 0.15s ease,
-        background-color 0.2s ease,
-        border-color 0.2s ease;
-}
-
-.button:hover {
-    transform: translateY(-2px);
+    padding: 14px 25px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: 0.2s;
 }
 
 .primary-button {
     background-color: var(--fern);
-    color: #ffffff;
-    border: 2px solid var(--fern);
+    color: white;
 }
 
 .primary-button:hover {
     background-color: var(--fern-bright);
-    border-color: var(--fern-bright);
 }
 
 .secondary-button {
-    border: 2px solid rgba(255, 255, 255, 0.82);
+    border: 2px solid white;
     color: white;
-    background-color: rgba(255, 255, 255, 0.04);
 }
 
 .secondary-button:hover {
@@ -272,16 +214,9 @@ section {
 }
 
 .light-button {
-    background-color: var(--surface);
+    background-color: white;
     color: var(--forest-dark);
     margin-top: 25px;
-    border: 2px solid var(--surface);
-}
-
-.light-button:hover {
-    background-color: var(--fern-bright);
-    border-color: var(--fern-bright);
-    color: var(--forest-black);
 }
 
 
@@ -290,11 +225,7 @@ section {
    ========================= */
 
 .intro {
-    background-color: var(--surface);
-}
-
-.intro h2 {
-    margin-bottom: 10px;
+    background-color: white;
 }
 
 
@@ -303,39 +234,27 @@ section {
    ========================= */
 
 .services {
-    background-color: var(--cream);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    gap: 30px;
+    background-color: var(--cream);
 }
 
 .service-card {
-    background-color: var(--surface);
-    padding: 38px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-medium);
-    box-shadow: var(--shadow-small);
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-medium);
-    border-color: var(--fern-soft);
+    background-color: white;
+    padding: 40px;
+    border-radius: 6px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
 }
 
 .service-number {
     font-size: 3rem;
-    color: var(--fern-soft);
-    font-weight: 800;
-    line-height: 1;
+    color: var(--sage);
+    font-weight: bold;
 }
 
 .service-card h3 {
-    margin: 18px 0 14px;
+    margin: 15px 0;
     font-size: 1.4rem;
     color: var(--forest-dark);
 }
@@ -368,7 +287,7 @@ section {
 }
 
 .feature-text li {
-    margin: 11px 0;
+    margin: 10px 0;
 }
 
 .feature-text li::marker {
@@ -382,37 +301,30 @@ section {
     background:
         radial-gradient(
             circle at top right,
-            rgba(105, 184, 117, 0.16),
+            rgba(101, 185, 111, 0.18),
             transparent 35%
         ),
         linear-gradient(
             135deg,
-            var(--forest-black),
+            var(--forest-dark),
             var(--forest)
         );
 
-    color: var(--text-light);
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 45px;
+    padding: 40px;
     text-align: center;
-    border-radius: var(--radius-medium);
-    box-shadow: var(--shadow-medium);
+    border-radius: 6px;
 }
 
 .feature-placeholder span,
 .about-placeholder span {
     font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: 14px;
-}
-
-.feature-placeholder p,
-.about-placeholder p {
-    color: var(--muted-light);
-    max-width: 500px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 
@@ -424,11 +336,11 @@ section {
     background:
         linear-gradient(
             135deg,
-            var(--forest-black),
-            var(--forest-dark)
+            var(--forest-dark),
+            var(--forest)
         );
 
-    color: var(--text-light);
+    color: white;
     text-align: center;
 }
 
@@ -437,15 +349,14 @@ section {
 }
 
 .call-to-action h2 {
-    font-size: clamp(2.3rem, 4vw, 3rem);
-    margin-bottom: 16px;
-    color: white;
+    font-size: 2.8rem;
+    margin-bottom: 15px;
 }
 
 .call-to-action p {
     max-width: 700px;
     margin: auto;
-    color: var(--muted-light);
+    color: #dfe8e1;
 }
 
 
@@ -455,15 +366,10 @@ section {
 
 .page-header {
     background:
-        radial-gradient(
-            circle at 75% 30%,
-            rgba(63, 143, 85, 0.18),
-            transparent 30%
-        ),
         linear-gradient(
             135deg,
-            var(--forest-black),
-            var(--forest-dark)
+            var(--forest-dark),
+            var(--forest)
         );
 
     color: white;
@@ -479,9 +385,9 @@ section {
 }
 
 .page-header p {
-    max-width: 760px;
-    margin: 16px auto 0;
-    color: var(--muted-light);
+    max-width: 750px;
+    margin: 15px auto 0;
+    color: #dfe8e1;
 }
 
 
@@ -494,7 +400,7 @@ section {
     grid-template-columns: 1fr 1fr;
     gap: 70px;
     align-items: center;
-    background-color: var(--surface);
+    background-color: white;
 }
 
 .about-content p {
@@ -509,19 +415,18 @@ section {
 .value-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    gap: 30px;
 }
 
 .value-card {
-    background-color: var(--surface);
-    padding: 36px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-medium);
-    box-shadow: var(--shadow-small);
+    background-color: white;
+    padding: 35px;
+    border-radius: 6px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
 }
 
 .value-card h3 {
-    margin-bottom: 14px;
+    margin-bottom: 15px;
     color: var(--forest-dark);
 }
 
@@ -538,11 +443,7 @@ section {
     display: grid;
     grid-template-columns: 1fr 1.3fr;
     gap: 70px;
-    background-color: var(--surface);
-}
-
-.contact-information {
-    padding-top: 5px;
+    background-color: white;
 }
 
 .contact-item {
@@ -550,7 +451,7 @@ section {
 }
 
 .contact-item h3 {
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     color: var(--forest-dark);
 }
 
@@ -560,19 +461,12 @@ section {
 
 .contact-item a {
     color: var(--fern);
-    font-weight: 700;
-}
-
-.contact-item a:hover {
-    color: var(--fern-bright);
-    text-decoration: underline;
+    font-weight: bold;
 }
 
 .contact-form-container {
     background-color: var(--surface-alt);
-    padding: 42px;
-    border-radius: var(--radius-medium);
-    border: 1px solid var(--border);
+    padding: 40px;
 }
 
 form {
@@ -582,33 +476,25 @@ form {
 }
 
 form label {
-    font-weight: 700;
-    margin: 13px 0 6px;
-    color: var(--forest-dark);
+    font-weight: bold;
+    margin: 12px 0 5px;
 }
 
 form input,
 form textarea,
 form select {
     width: 100%;
-    padding: 13px 14px;
-    border: 1px solid #c7d1c9;
-    background-color: var(--surface);
-    color: var(--text);
+    padding: 13px;
+    border: 1px solid #cccccc;
+    background-color: white;
     font: inherit;
-    border-radius: var(--radius-small);
-    outline: none;
-
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
 }
 
 form input:focus,
 form textarea:focus,
 form select:focus {
+    outline: none;
     border-color: var(--fern);
-    box-shadow: 0 0 0 3px rgba(63, 143, 85, 0.12);
 }
 
 form textarea {
@@ -616,29 +502,24 @@ form textarea {
 }
 
 form button {
-    margin-top: 22px;
+    margin-top: 20px;
     padding: 15px;
     background-color: var(--fern);
     color: white;
     border: none;
-    border-radius: var(--radius-small);
     cursor: pointer;
     font-size: 1rem;
-    font-weight: 800;
-    transition:
-        background-color 0.2s ease,
-        transform 0.15s ease;
+    font-weight: bold;
 }
 
 form button:hover {
     background-color: var(--fern-bright);
-    transform: translateY(-1px);
 }
 
 .form-note {
     font-size: 0.8rem;
     color: var(--muted);
-    margin-top: 16px;
+    margin-top: 15px;
 }
 
 
@@ -647,24 +528,19 @@ form button:hover {
    ========================= */
 
 footer {
-    background-color: var(--forest-black);
-    color: var(--muted-light);
-    min-height: 165px;
-    padding: 42px 8%;
+    background-color: var(--forest-dark);
+    color: #cccccc;
+    min-height: 160px;
+    padding: 40px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 footer h3 {
     color: white;
-    margin-bottom: 6px;
-}
-
-footer p {
-    font-size: 0.92rem;
+    margin-bottom: 5px;
 }
 
 
@@ -676,7 +552,7 @@ footer p {
 
     header {
         flex-direction: column;
-        padding: 20px 7% 0;
+        padding-top: 20px;
     }
 
     .logo {
@@ -685,34 +561,21 @@ footer p {
     }
 
     nav {
-        gap: 22px;
-    }
-
-    nav a {
-        padding: 22px 0;
-    }
-
-    nav a::after {
-        bottom: 15px;
+        gap: 20px;
     }
 
     .hero {
-        min-height: 600px;
-        padding: 70px 7%;
+        min-height: 550px;
 
         background:
             linear-gradient(
-                rgba(7, 17, 12, 0.78),
-                rgba(7, 17, 12, 0.78)
+                rgba(7, 21, 16, 0.78),
+                rgba(7, 21, 16, 0.78)
             ),
             url("hero.jpg");
 
         background-size: cover;
         background-position: 62% center;
-    }
-
-    .hero h2 {
-        letter-spacing: -1px;
     }
 
     .services,
@@ -723,18 +586,8 @@ footer p {
         grid-template-columns: 1fr;
     }
 
-    .feature-section,
-    .about-section,
-    .contact-container {
-        gap: 45px;
-    }
-
     section {
         padding: 65px 7%;
-    }
-
-    .contact-form-container {
-        padding: 30px;
     }
 
     footer {
@@ -742,38 +595,3 @@ footer p {
         align-items: flex-start;
     }
 }
-
-
-/* =========================
-   SMALL PHONES
-   ========================= */
-
-@media screen and (max-width: 480px) {
-
-    .hero {
-        min-height: 560px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .button {
-        text-align: center;
-    }
-
-    nav {
-        gap: 17px;
-    }
-
-    .service-card,
-    .value-card {
-        padding: 28px;
-    }
-
-    .contact-form-container {
-        padding: 24px;
-    }
-}
-```
