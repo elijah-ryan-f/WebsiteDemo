@@ -1,597 +1,74 @@
-/* =========================
-   GLOBAL SETTINGS
-   ========================= */
-
-:root {
-    --forest-dark: #071510;
-    --forest: #123b2a;
-    --fern: #3f8f55;
-    --fern-bright: #65b96f;
-    --sage: #a8c3aa;
-
-    --cream: #f5f6f2;
-    --surface: #ffffff;
-    --surface-alt: #edf1ec;
-
-    --text: #18201b;
-    --muted: #667069;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--cream);
-    color: var(--text);
-    line-height: 1.6;
-}
-
-h1,
-h2,
-h3 {
-    line-height: 1.2;
-}
-
-a {
-    text-decoration: none;
-}
-
-
-/* =========================
-   HEADER
-   ========================= */
-
-header {
-    min-height: 90px;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 7%;
-    border-bottom: 1px solid #dddddd;
-}
-
-.logo {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-}
-
-.logo h1 {
-    font-size: 1.45rem;
-    color: var(--forest-dark);
-}
-
-.logo span {
-    font-size: 0.78rem;
-    color: var(--muted);
-}
-
-nav {
-    display: flex;
-    gap: 30px;
-}
-
-nav a {
-    color: #333333;
-    font-weight: bold;
-    padding: 31px 0;
-}
-
-nav a:hover,
-nav a.active {
-    color: var(--fern);
-}
-
-
-/* =========================
-   HERO
-   ========================= */
-
-.hero {
-    min-height: 650px;
-    display: flex;
-    align-items: center;
-    padding: 80px 8%;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(7, 21, 16, 0.90) 0%,
-            rgba(7, 21, 16, 0.74) 42%,
-            rgba(7, 21, 16, 0.30) 72%,
-            rgba(7, 21, 16, 0.12) 100%
-        ),
-        url("hero.jpg");
-
-    background-size: cover;
-    background-position: center;
-    color: white;
-}
-
-.hero-content {
-    max-width: 750px;
-}
-
-.hero .eyebrow {
-    color: var(--fern-bright);
-}
-
-.hero h2 {
-    font-size: clamp(3rem, 7vw, 6rem);
-    margin: 10px 0 25px;
-    color: white;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    max-width: 650px;
-    color: white;
-}
-
-
-/* =========================
-   GENERAL SECTIONS
-   ========================= */
-
-section {
-    padding: 90px 8%;
-}
-
-.eyebrow {
-    color: var(--fern);
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.section-heading {
-    max-width: 700px;
-    margin-bottom: 25px;
-}
-
-.section-heading h2,
-.intro h2,
-.feature-section h2,
-.page-header h2,
-.about-section h2,
-.contact-container h2 {
-    font-size: 2.5rem;
-}
-
-.section-description {
-    max-width: 800px;
-    font-size: 1.1rem;
-    color: var(--muted);
-}
-
-
-/* =========================
-   BUTTONS
-   ========================= */
-
-.hero-buttons {
-    margin-top: 35px;
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.button {
-    display: inline-block;
-    padding: 14px 25px;
-    border-radius: 4px;
-    font-weight: bold;
-    transition: 0.2s;
-}
-
-.primary-button {
-    background-color: var(--fern);
-    color: white;
-}
-
-.primary-button:hover {
-    background-color: var(--fern-bright);
-}
-
-.secondary-button {
-    border: 2px solid white;
-    color: white;
-}
-
-.secondary-button:hover {
-    background-color: white;
-    color: var(--forest-dark);
-}
-
-.light-button {
-    background-color: white;
-    color: var(--forest-dark);
-    margin-top: 25px;
-}
-
-
-/* =========================
-   INTRO
-   ========================= */
-
-.intro {
-    background-color: white;
-}
-
-
-/* =========================
-   SERVICES
-   ========================= */
-
-.services {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    background-color: var(--cream);
-}
-
-.service-card {
-    background-color: white;
-    padding: 40px;
-    border-radius: 6px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
-}
-
-.service-number {
-    font-size: 3rem;
-    color: var(--sage);
-    font-weight: bold;
-}
-
-.service-card h3 {
-    margin: 15px 0;
-    font-size: 1.4rem;
-    color: var(--forest-dark);
-}
-
-.service-card p {
-    color: var(--muted);
-}
-
-
-/* =========================
-   FEATURE SECTION
-   ========================= */
-
-.feature-section {
-    background-color: var(--surface-alt);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 70px;
-    align-items: center;
-}
-
-.feature-text p {
-    margin: 20px 0;
-    color: var(--muted);
-}
-
-.feature-text ul {
-    margin-left: 20px;
-    margin-top: 25px;
-}
-
-.feature-text li {
-    margin: 10px 0;
-}
-
-.feature-text li::marker {
-    color: var(--fern);
-}
-
-.feature-placeholder,
-.about-placeholder {
-    min-height: 400px;
-
-    background:
-        radial-gradient(
-            circle at top right,
-            rgba(101, 185, 111, 0.18),
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            var(--forest-dark),
-            var(--forest)
-        );
-
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    text-align: center;
-    border-radius: 6px;
-}
-
-.feature-placeholder span,
-.about-placeholder span {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-
-/* =========================
-   CALL TO ACTION
-   ========================= */
-
-.call-to-action {
-    background:
-        linear-gradient(
-            135deg,
-            var(--forest-dark),
-            var(--forest)
-        );
-
-    color: white;
-    text-align: center;
-}
-
-.call-to-action .eyebrow {
-    color: var(--fern-bright);
-}
-
-.call-to-action h2 {
-    font-size: 2.8rem;
-    margin-bottom: 15px;
-}
-
-.call-to-action p {
-    max-width: 700px;
-    margin: auto;
-    color: #dfe8e1;
-}
-
-
-/* =========================
-   PAGE HEADERS
-   ========================= */
-
-.page-header {
-    background:
-        linear-gradient(
-            135deg,
-            var(--forest-dark),
-            var(--forest)
-        );
-
-    color: white;
-    text-align: center;
-}
-
-.page-header .eyebrow {
-    color: var(--fern-bright);
-}
-
-.page-header h2 {
-    color: white;
-}
-
-.page-header p {
-    max-width: 750px;
-    margin: 15px auto 0;
-    color: #dfe8e1;
-}
-
-
-/* =========================
-   ABOUT PAGE
-   ========================= */
-
-.about-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 70px;
-    align-items: center;
-    background-color: white;
-}
-
-.about-content p {
-    margin-top: 20px;
-    color: var(--muted);
-}
-
-.values {
-    background-color: var(--surface-alt);
-}
-
-.value-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.value-card {
-    background-color: white;
-    padding: 35px;
-    border-radius: 6px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-}
-
-.value-card h3 {
-    margin-bottom: 15px;
-    color: var(--forest-dark);
-}
-
-.value-card p {
-    color: var(--muted);
-}
-
-
-/* =========================
-   CONTACT PAGE
-   ========================= */
-
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    gap: 70px;
-    background-color: white;
-}
-
-.contact-item {
-    margin-top: 30px;
-}
-
-.contact-item h3 {
-    margin-bottom: 5px;
-    color: var(--forest-dark);
-}
-
-.contact-item p {
-    color: var(--muted);
-}
-
-.contact-item a {
-    color: var(--fern);
-    font-weight: bold;
-}
-
-.contact-form-container {
-    background-color: var(--surface-alt);
-    padding: 40px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    margin-top: 25px;
-}
-
-form label {
-    font-weight: bold;
-    margin: 12px 0 5px;
-}
-
-form input,
-form textarea,
-form select {
-    width: 100%;
-    padding: 13px;
-    border: 1px solid #cccccc;
-    background-color: white;
-    font: inherit;
-}
-
-form input:focus,
-form textarea:focus,
-form select:focus {
-    outline: none;
-    border-color: var(--fern);
-}
-
-form textarea {
-    resize: vertical;
-}
-
-form button {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: var(--fern);
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-form button:hover {
-    background-color: var(--fern-bright);
-}
-
-.form-note {
-    font-size: 0.8rem;
-    color: var(--muted);
-    margin-top: 15px;
-}
-
-
-/* =========================
-   FOOTER
-   ========================= */
-
-footer {
-    background-color: var(--forest-dark);
-    color: #cccccc;
-    min-height: 160px;
-    padding: 40px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-}
-
-footer h3 {
-    color: white;
-    margin-bottom: 5px;
-}
-
-
-/* =========================
-   MOBILE
-   ========================= */
-
-@media screen and (max-width: 800px) {
-
-    header {
-        flex-direction: column;
-        padding-top: 20px;
-    }
-
-    .logo {
-        align-items: center;
-        text-align: center;
-    }
-
-    nav {
-        gap: 20px;
-    }
-
-    .hero {
-        min-height: 550px;
-
-        background:
-            linear-gradient(
-                rgba(7, 21, 16, 0.78),
-                rgba(7, 21, 16, 0.78)
-            ),
-            url("hero.jpg");
-
-        background-size: cover;
-        background-position: 62% center;
-    }
-
-    .services,
-    .feature-section,
-    .about-section,
-    .value-grid,
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-
-    section {
-        padding: 65px 7%;
-    }
-
-    footer {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background-color:#f8f8f8;color:#222;line-height:1.6}
+h1,h2,h3{line-height:1.2}
+a{text-decoration:none}
+header{min-height:90px;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 7%;border-bottom:1px solid #ddd}
+.logo{display:flex;flex-direction:column;gap:3px}
+.logo h1{font-size:1.45rem}
+.logo span{font-size:.78rem;color:#666}
+nav{display:flex;gap:30px}
+nav a{color:#333;font-weight:bold;padding:31px 0}
+nav a:hover,nav a.active{color:#1d5c63}
+.hero{min-height:650px;display:flex;align-items:center;padding:80px 8%;background:linear-gradient(rgba(0,0,0,.62),rgba(0,0,0,.62)),url("hero.jpg");background-size:cover;background-position:center;color:#fff}
+.hero-content{max-width:760px}
+.hero h2{font-size:clamp(3rem,7vw,6rem);margin:10px 0 25px}
+.hero p{font-size:1.2rem;max-width:680px}
+section{padding:90px 8%}
+.eyebrow{color:#1d5c63;font-size:.8rem;letter-spacing:3px;font-weight:bold;margin-bottom:10px}
+.hero .eyebrow,.page-header .eyebrow,.call-to-action .eyebrow{color:#b9e2e5}
+.section-heading{max-width:700px;margin-bottom:25px}
+.section-heading h2,.intro h2,.feature-section h2,.page-header h2,.about-section h2,.contact-container h2{font-size:2.5rem}
+.section-description{max-width:800px;font-size:1.1rem}
+.hero-buttons{margin-top:35px;display:flex;gap:15px;flex-wrap:wrap}
+.button{display:inline-block;padding:14px 25px;border-radius:4px;font-weight:bold;transition:.2s}
+.primary-button{background:#1d5c63;color:#fff}
+.primary-button:hover{background:#16484d}
+.secondary-button{border:2px solid #fff;color:#fff}
+.secondary-button:hover{background:#fff;color:#222}
+.light-button{background:#fff;color:#1d5c63;margin-top:25px}
+.intro{background:#fff}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.service-card{background:#fff;padding:40px;border-radius:6px;box-shadow:0 8px 25px rgba(0,0,0,.07)}
+.service-number{font-size:3rem;color:#ddd;font-weight:bold}
+.service-card h3{margin:15px 0;font-size:1.4rem}
+.feature-section{background:#ececec;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.feature-text p{margin:20px 0}
+.feature-text ul{margin-left:20px;margin-top:25px}
+.feature-text li{margin:10px 0}
+.feature-placeholder,.about-placeholder{min-height:400px;background:#1d5c63;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px;text-align:center;border-radius:6px}
+.feature-placeholder span,.about-placeholder span{font-size:2rem;font-weight:bold;margin-bottom:12px}
+.call-to-action{background:#1d5c63;color:#fff;text-align:center}
+.call-to-action h2{font-size:2.8rem;margin-bottom:15px}
+.call-to-action p{max-width:700px;margin:auto}
+.page-header{background:#222;color:#fff;text-align:center}
+.page-header p{max-width:750px;margin:15px auto 0}
+.about-section{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;background:#fff}
+.about-content p{margin-top:20px}
+.values{background:#f3f3f3}
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.value-card{background:#fff;padding:35px}
+.value-card h3{margin-bottom:15px}
+.contact-container{display:grid;grid-template-columns:1fr 1.3fr;gap:70px;background:#fff}
+.contact-item{margin-top:30px}
+.contact-item h3{margin-bottom:5px}
+.contact-item a{color:#1d5c63;font-weight:bold}
+.contact-form-container{background:#f3f3f3;padding:40px}
+form{display:flex;flex-direction:column;margin-top:25px}
+form label{font-weight:bold;margin:12px 0 5px}
+form input,form textarea,form select{width:100%;padding:13px;border:1px solid #ccc;background:#fff;font:inherit}
+form textarea{resize:vertical}
+form button{margin-top:20px;padding:15px;background:#1d5c63;color:#fff;border:none;cursor:pointer;font-size:1rem;font-weight:bold}
+form button:hover{background:#16484d}
+.form-note{font-size:.8rem;color:#666;margin-top:15px}
+footer{background:#161616;color:#ccc;min-height:160px;padding:40px 8%;display:flex;justify-content:space-between;align-items:center;gap:30px}
+footer h3{color:#fff;margin-bottom:5px}
+@media screen and (max-width:800px){
+  header{flex-direction:column;padding-top:20px}
+  .logo{align-items:center;text-align:center}
+  nav{gap:20px}
+  .hero{min-height:550px}
+  .services,.feature-section,.about-section,.value-grid,.contact-container{grid-template-columns:1fr}
+  section{padding:65px 7%}
+  footer{flex-direction:column;align-items:flex-start}
 }
